@@ -29,14 +29,16 @@ gestion_utilisateurs_groupes() {
         1)
             echo -n "Nom de l'utilisateur à créer: "
             read username
-            sudo useradd $username
-            echo "Utilisateur $username créé."
+            sudo useradd -m $username
+            echo "Utilisateur $username créé avec répertoire personnel."
+            echo "Définissez le mot de passe pour $username:"
+            sudo passwd $username
             ;;
         2)
             echo -n "Nom de l'utilisateur à supprimer: "
             read username
-            sudo userdel $username
-            echo "Utilisateur $username supprimé."
+            sudo userdel -r $username
+            echo "Utilisateur $username supprimé avec répertoire personnel."
             ;;
         3)
             echo -n "Nom du groupe à créer: "
