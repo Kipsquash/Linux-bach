@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Script de gestion administrative pour Linux
-# Menu interactif pour la gestion des utilisateurs, groupes, mots de passe, permissions, services et processus
-
-# Fonction pour afficher le menu principal
 afficher_menu() {
     echo "=== Menu de Gestion Administrative ==="
     echo "1. Gestion des utilisateurs et groupes"
@@ -15,7 +11,6 @@ afficher_menu() {
     echo -n "Choisissez une option (1-6): "
 }
 
-# Fonction pour la gestion des utilisateurs et groupes
 gestion_utilisateurs_groupes() {
     echo "=== Gestion des Utilisateurs et Groupes ==="
     echo "1. Créer un utilisateur"
@@ -61,7 +56,6 @@ gestion_utilisateurs_groupes() {
     esac
 }
 
-# Fonction pour la gestion des mots de passe
 gestion_mots_de_passe() {
     echo "=== Gestion des Mots de Passe ==="
     echo "1. Réinitialiser le mot de passe d'un utilisateur"
@@ -97,7 +91,6 @@ gestion_mots_de_passe() {
     esac
 }
 
-# Fonction pour la gestion des permissions
 gestion_permissions() {
     echo "=== Gestion des Permissions des Dossiers/Fichiers ==="
     echo -n "Chemin du fichier/dossier: "
@@ -108,7 +101,6 @@ gestion_permissions() {
     echo "Permissions de $path changées à $perms."
 }
 
-# Fonction pour la gestion des services
 gestion_services() {
     echo "=== Gestion des Services ==="
     echo -n "Nom du service: "
@@ -140,7 +132,6 @@ gestion_services() {
     esac
 }
 
-# Fonction pour la gestion des processus
 gestion_processus() {
     echo "=== Gestion des Processus ==="
     echo "Processus en cours:"
@@ -153,7 +144,6 @@ gestion_processus() {
     fi
 }
 
-# Boucle principale
 while true; do
     afficher_menu
     read choix
